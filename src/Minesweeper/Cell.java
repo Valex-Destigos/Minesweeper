@@ -25,7 +25,6 @@ public class Cell {
         }
         this.x = x;
         this.y = y;
-        int i = 0;
     }
 
     public int getXPos() {
