@@ -3,7 +3,7 @@ package Minesweeper;
 import java.awt.Point;
 
 public class GameBoard {
-    private static final int BOARD_SIZE = 10;
+    private static final int BOARD_SIZE = 15;
     private static final double MINE_RATIO = 0.2;
     private static final int MINIMUM_MINES = Double.valueOf(BOARD_SIZE * MINE_RATIO).intValue();
     private static GameBoard instance;
