@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import java.util.function.Predicate;
+
+import Minesweeper.GameBoard.GameState;
+
 public class Cell {
     private final List<Optional<Cell>> neighbors;
     private final int x;
@@ -14,7 +18,7 @@ public class Cell {
     private boolean isMine = false;
     private State state = State.COVERED;
 
-    private enum State {
+    public enum State {
         UNCOVERED, COVERED, FLAGGED;
     }
 
@@ -41,7 +45,10 @@ public class Cell {
             for (int j = y - 1; j <= y + 1; j++) {
                 if (i != x || j != y) {
                     if (i >= 0 && i < gameBoard.getBoardSize() && j >= 0 && j < gameBoard.getBoardSize()) {
-                        addNeighbor(index, Optional.of(gameBoard.getBoard()[i][j]));
+                        setNeighbor(index, Optional.of(gameBoard.getBoard()[i][j]));
+                        if (gameBoard.getBoard()[i][j].isMine()) {
+                            mineCount++;
+                        }
                     }
                     index++;
                 }
@@ -66,7 +73,17 @@ public class Cell {
         return state;
     }
 
-    private void addNeighbor(int index, Optional<Cell> optionalCell) {
+    public int getMineCount() {
+        return mineCount;
+    }
+
+    public void revealMine() {
+        if (isMine) {
+            state = State.UNCOVERED;
+        }
+    }
+
+    private void setNeighbor(int index, Optional<Cell> optionalCell) {
         neighbors.set(index, optionalCell);
     }
 
@@ -81,12 +98,16 @@ public class Cell {
     public void uncover() {
         if (state == State.COVERED) {
             state = State.UNCOVERED;
-            if (mineCount == 0) {
-                for (Optional<Cell> neighbor : neighbors) {
-                    if (neighbor.isPresent()) {
-                        neighbor.get().uncover();
-                    }
-                }
+            if (gameBoard.getGameState() == GameState.RUNNING && mineCount == 0) {
+                neighbors.stream().filter(Optional::isPresent).map(Optional::get).forEach(Cell::uncover);
+            } else if (gameBoard.getGameState() == GameState.GAME_INITIALIZED) {
+                gameBoard.setGameState(GameState.RUNNING);
+                gameBoard.startGame();
+                neighbors.stream()
+                        .filter(Optional::isPresent)
+                        .map(Optional::get)
+                        .filter(Predicate.not(Cell::isMine))
+                        .forEach(Cell::uncover);
             }
         }
     }
