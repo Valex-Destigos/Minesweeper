@@ -1,5 +1,11 @@
 package Minesweeper;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -10,22 +16,43 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 public class MenuScreen extends JPanel {
-
-    private enum Difficulty {
-        EASY, MEDIUM, HARD;
-    }
-
+    
+    private final int gameWidth = GameGUI.GAME_WIDTH / 2;
+    private final int gameHeight = GameGUI.GAME_HEIGHT / 2;
+    
     private Difficulty difficulty = Difficulty.EASY;
     private JButton startButton;
     private JButton difficultyButton;
     private GameBoard.GameState gameState;
+    private Image image;
+    private Graphics g;
+    
+    private enum Difficulty {
+        EASY, MEDIUM, HARD;
+    }
 
     public MenuScreen(GameBoard.GameState gameState) {
         this.gameState = gameState;
 
         createStartOrEndScreen();
 
+        this.setBackground(Color.darkGray);
         this.setPreferredSize(GameGUI.getScreenSize());
+
+        draw();
+    }
+
+    private void draw() {
+        //TODO design menu screen
+
+        /* 
+        g = this.getGraphics();
+
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        startButton.setBounds((gameWidth) / 2, (gameHeight) / 2, 2, 1);
+         */
     }
 
     private class StartButtonListener implements ActionListener {

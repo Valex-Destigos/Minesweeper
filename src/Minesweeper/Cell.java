@@ -54,14 +54,19 @@ public class Cell {
                 }
             }
         }
+        countMines();
     }
 
     public void setMine() {
         isMine = true;
     }
 
-    public void countMines() {
-        mineCount = neighbors.stream().filter(Optional::isPresent).map(Optional::get).filter(Cell::isMine).toList()
+    private void countMines() {
+        mineCount = neighbors.stream()
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .filter(Cell::isMine)
+                .toList()
                 .size();
     }
 
@@ -74,6 +79,7 @@ public class Cell {
     }
 
     public int getMineCount() {
+        countMines();
         return mineCount;
     }
 

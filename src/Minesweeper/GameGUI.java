@@ -26,7 +26,7 @@ public class GameGUI extends JPanel implements Runnable {
 
     private static GameGUI instance;
 
-    private final Thread grpahicsThread;
+    private final Thread graphicsThread;
     private final GameBoard gameBoard = GameBoard.getInstance();
     private final int width = (int) SCREEN_SIZE.getWidth() / gameBoard.getBoardSize();
     private final int height = (int) SCREEN_SIZE.getHeight() / gameBoard.getBoardSize();
@@ -38,8 +38,8 @@ public class GameGUI extends JPanel implements Runnable {
         this.setFocusable(true);
         this.addMouseListener(new ActionListener());
         this.setPreferredSize(SCREEN_SIZE);
-        grpahicsThread = new Thread(this);
-        grpahicsThread.start();
+        graphicsThread = new Thread(this);
+        graphicsThread.start();
     }
 
     public static GameGUI getInstance() {

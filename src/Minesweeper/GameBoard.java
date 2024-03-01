@@ -52,7 +52,7 @@ public class GameBoard implements Runnable {
 
     public static void setBoardSize(int size) {
         if (size <= 0) {
-            throw new IllegalArgumentException("Board size must be greater than 0");
+            throw new IllegalArgumentException("Board size must be greater than 0.");
         }
         BOARD_SIZE = size;
     }
@@ -84,7 +84,7 @@ public class GameBoard implements Runnable {
         }
     }
 
-    public void showSolutionIfGameOver() {
+    public void showSolution() {
         Set<Cell> mines = new HashSet<>();
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (int j = 0; j < BOARD_SIZE; j++) {
@@ -122,7 +122,7 @@ public class GameBoard implements Runnable {
             lastTime = now;
             if (delta >= 1) {
                 if (gameState == GameState.GAME_OVER) {
-                    showSolutionIfGameOver();
+                    showSolution();
                 }
                 delta--;
             }
