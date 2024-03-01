@@ -26,8 +26,7 @@ public class GameGUI extends JPanel implements Runnable {
 
     private static GameGUI instance;
 
-    private final JFrame frame;
-    private final Thread gameThread;
+    private final Thread grpahicsThread;
     private final GameBoard gameBoard = GameBoard.getInstance();
     private final int width = (int) SCREEN_SIZE.getWidth() / gameBoard.getBoardSize();
     private final int height = (int) SCREEN_SIZE.getHeight() / gameBoard.getBoardSize();
@@ -39,19 +38,8 @@ public class GameGUI extends JPanel implements Runnable {
         this.setFocusable(true);
         this.addMouseListener(new ActionListener());
         this.setPreferredSize(SCREEN_SIZE);
-
-        frame = new JFrame();
-        frame.add(this);
-        frame.setTitle("Minesweeper");
-        frame.setResizable(false);
-        frame.setBackground(Color.darkGray);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
-
-        gameThread = new Thread(this);
-        gameThread.start();
+        grpahicsThread = new Thread(this);
+        grpahicsThread.start();
     }
 
     public static GameGUI getInstance() {
@@ -59,6 +47,17 @@ public class GameGUI extends JPanel implements Runnable {
             instance = new GameGUI();
         }
         return instance;
+    }
+
+    public static Dimension getScreenSize() {
+        return SCREEN_SIZE;
+    }
+
+    
+    public void endGame() {
+        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(instance);
+        frame.setContentPane(new MenuScreen(gameBoard.getGameState()));
+        frame.revalidate();
     }
 
     @Override
@@ -72,7 +71,6 @@ public class GameGUI extends JPanel implements Runnable {
             delta += (now - lastTime) / nsPerTick;
             lastTime = now;
             if (delta >= 1) {
-                gameBoard.showSolutionIfGameOver();
                 repaint();
                 delta--;
             }

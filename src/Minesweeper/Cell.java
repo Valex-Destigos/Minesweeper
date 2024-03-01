@@ -77,9 +77,14 @@ public class Cell {
         return mineCount;
     }
 
-    public void revealMine() {
+    public void revealMine(long sleepTime) {
         if (isMine) {
             state = State.UNCOVERED;
+            try {
+                Thread.sleep(sleepTime);
+            } catch (InterruptedException e) {
+                System.out.println("Thread interrupted");
+            }
         }
     }
 

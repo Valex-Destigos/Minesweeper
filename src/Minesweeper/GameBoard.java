@@ -1,22 +1,29 @@
 package Minesweeper;
 
 import java.awt.Point;
+import java.util.HashSet;
+import java.util.Set;
 
-public class GameBoard {
-    private static final int BOARD_SIZE = 15;
+public class GameBoard implements Runnable {
+    private static int BOARD_SIZE = 10; // default value, later changed by user
     private static final double MINE_RATIO = 0.2;
     private static final int MINIMUM_MINES = Double.valueOf(BOARD_SIZE * MINE_RATIO).intValue();
     private static GameBoard instance;
+    private static GameGUI gameGUI;
 
     private Cell[][] board;
+    private Thread logicThread;
     private GameState gameState = GameState.GAME_INITIALIZED;
+    private long sleepTime = 200;
 
     public enum GameState {
         GAME_INITIALIZED, RUNNING, GAME_OVER;
     }
 
-    private GameBoard(int size) {
+    private GameBoard() {
         board = new Cell[BOARD_SIZE][BOARD_SIZE];
+        logicThread = new Thread(this);
+        logicThread.start();
     }
 
     public void initializeGame() {
@@ -30,7 +37,7 @@ public class GameBoard {
 
     public static GameBoard getInstance() {
         if (instance == null) {
-            instance = new GameBoard(BOARD_SIZE);
+            instance = new GameBoard();
         }
         return instance;
     }
@@ -41,6 +48,13 @@ public class GameBoard {
 
     public int getBoardSize() {
         return BOARD_SIZE;
+    }
+
+    public static void setBoardSize(int size) {
+        if (size <= 0) {
+            throw new IllegalArgumentException("Board size must be greater than 0");
+        }
+        BOARD_SIZE = size;
     }
 
     public GameState getGameState() {
@@ -71,13 +85,46 @@ public class GameBoard {
     }
 
     public void showSolutionIfGameOver() {
-        if (gameState == GameState.GAME_OVER) {
-            for (int i = 0; i < BOARD_SIZE; i++) {
-                for (int j = 0; j < BOARD_SIZE; j++) {
-                    if (board[i][j].isMine()) {
-                        board[i][j].revealMine();
-                    }
+        Set<Cell> mines = new HashSet<>();
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            for (int j = 0; j < BOARD_SIZE; j++) {
+                if (board[i][j].isMine()) {
+                    mines.add(board[i][j]);
                 }
+            }
+        }
+        mines.forEach(cell -> {
+            cell.revealMine(sleepTime);
+            if (sleepTime > 20) {
+                sleepTime -= 15;
+            } else {
+                sleepTime = 10;
+            }
+        });
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            System.out.println("Thread interrupted");
+        }
+        gameGUI = GameGUI.getInstance();
+        gameGUI.endGame();
+    }
+
+    @Override
+    public void run() {
+        // game loop
+        long lastTime = System.nanoTime();
+        double nsPerTick = 1000000000 / 30; // 30 fps
+        double delta = 0;
+        while (true) {
+            long now = System.nanoTime();
+            delta += (now - lastTime) / nsPerTick;
+            lastTime = now;
+            if (delta >= 1) {
+                if (gameState == GameState.GAME_OVER) {
+                    showSolutionIfGameOver();
+                }
+                delta--;
             }
         }
     }
