@@ -17,6 +17,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import Minesweeper.GameBoard.GameState;
+
 public class GameGUI extends JPanel implements Runnable {
 
     public static final int GAME_WIDTH = 720;
@@ -140,7 +142,11 @@ public class GameGUI extends JPanel implements Runnable {
 
         if (cell.getState() == Cell.State.UNCOVERED) {
             if (cell.isMine()) {
-                g.setColor(Color.red);
+                if (gameBoard.getGameState() == GameState.GAME_WON) {
+                    g.setColor(Color.green);
+                } else {
+                    g.setColor(Color.red);
+                }
                 g.fillRect(x, y, width, height);
             } else {
                 g.setColor(Color.lightGray);
