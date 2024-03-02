@@ -15,6 +15,7 @@ public class GameBoard implements Runnable {
     private Thread logicThread;
     private GameState gameState = GameState.GAME_INITIALIZED;
     private long sleepTime = 200;
+    private boolean checkGameOver = true;
 
     public enum GameState {
         GAME_INITIALIZED, RUNNING, GAME_OVER;
@@ -108,6 +109,7 @@ public class GameBoard implements Runnable {
         }
         gameGUI = GameGUI.getInstance();
         gameGUI.endGame();
+        checkGameOver = false;
     }
 
     @Override
@@ -121,7 +123,7 @@ public class GameBoard implements Runnable {
             delta += (now - lastTime) / nsPerTick;
             lastTime = now;
             if (delta >= 1) {
-                if (gameState == GameState.GAME_OVER) {
+                if (checkGameOver && gameState == GameState.GAME_OVER) {
                     showSolution();
                 }
                 delta--;
