@@ -18,7 +18,7 @@ public class GameBoard implements Runnable {
     private boolean checkGameOver = true;
 
     public enum GameState {
-        GAME_INITIALIZED, RUNNING, GAME_OVER;
+        GAME_INITIALIZED, RUNNING, GAME_OVER, GAME_WON;
     }
 
     private GameBoard() {
@@ -85,7 +85,29 @@ public class GameBoard implements Runnable {
         }
     }
 
-    public void showSolution() {
+    @Override
+    public void run() {
+        // game loop
+        long lastTime = System.nanoTime();
+        double nsPerTick = 1000000000 / 30; // 30 fps
+        double delta = 0;
+        while (true) {
+            long now = System.nanoTime();
+            delta += (now - lastTime) / nsPerTick;
+            lastTime = now;
+            if (delta >= 1) {
+                if (checkGameOver && gameState == GameState.GAME_OVER) {
+                    showSolution();
+                }
+                if (gameState != GameState.GAME_WON) {
+                    checkWinCondition();
+                }
+                delta--;
+            }
+        }
+    }
+
+    private void showSolution() {
         Set<Cell> mines = new HashSet<>();
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (int j = 0; j < BOARD_SIZE; j++) {
@@ -107,27 +129,14 @@ public class GameBoard implements Runnable {
         } catch (InterruptedException e) {
             System.out.println("Thread interrupted");
         }
-        gameGUI = GameGUI.getInstance();
-        gameGUI.endGame();
         checkGameOver = false;
+        gameGUI.endGame();
     }
 
-    @Override
-    public void run() {
-        // game loop
-        long lastTime = System.nanoTime();
-        double nsPerTick = 1000000000 / 30; // 30 fps
-        double delta = 0;
-        while (true) {
-            long now = System.nanoTime();
-            delta += (now - lastTime) / nsPerTick;
-            lastTime = now;
-            if (delta >= 1) {
-                if (checkGameOver && gameState == GameState.GAME_OVER) {
-                    showSolution();
-                }
-                delta--;
-            }
+    private void checkWinCondition() {
+        if (countMines() + countUncoveredCells() == BOARD_SIZE * BOARD_SIZE) {
+            gameState = GameState.GAME_WON;
+            showSolution();
         }
     }
 
@@ -137,6 +146,7 @@ public class GameBoard implements Runnable {
                 board[i][j] = new Cell(i, j);
             }
         }
+        gameGUI = GameGUI.getInstance();
     }
 
     private void calculateNeighbors() {
@@ -165,6 +175,18 @@ public class GameBoard implements Runnable {
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (int j = 0; j < BOARD_SIZE; j++) {
                 if (board[i][j].isMine()) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    private int countUncoveredCells() {
+        int count = 0;
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            for (int j = 0; j < BOARD_SIZE; j++) {
+                if (board[i][j].getState() == Cell.State.UNCOVERED) {
                     count++;
                 }
             }

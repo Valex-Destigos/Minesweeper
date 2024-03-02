@@ -94,8 +94,12 @@ public class Cell {
         }
     }
 
-    private void setNeighbor(int index, Optional<Cell> optionalCell) {
-        neighbors.set(index, optionalCell);
+    public int countNeighborFlags() {
+        return (int) neighbors.stream()
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .filter(cell -> cell.getState() == State.FLAGGED)
+                .count();
     }
 
     public void toggleFlag() {
@@ -120,6 +124,18 @@ public class Cell {
                         .filter(Predicate.not(Cell::isMine))
                         .forEach(Cell::uncover);
             }
+        } else if (state == State.UNCOVERED) {
+            if (mineCount == countNeighborFlags()) {
+                neighbors.stream()
+                        .filter(Optional::isPresent)
+                        .map(Optional::get)
+                        .filter(cell -> cell.getState() == State.COVERED)
+                        .forEach(Cell::uncover);
+            }
         }
+    }
+
+    private void setNeighbor(int index, Optional<Cell> optionalCell) {
+        neighbors.set(index, optionalCell);
     }
 }

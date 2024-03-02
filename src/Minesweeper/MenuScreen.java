@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
 
+import Minesweeper.GameBoard.GameState;
+
 public class MenuScreen extends JPanel {
 
     private final int gameWidth = GameGUI.GAME_WIDTH;
@@ -21,6 +23,7 @@ public class MenuScreen extends JPanel {
     private JTextPane title;
     private JTextPane subTitle;
     private JTextPane gameOverText;
+    private JTextPane gameWonText;
     private JButton startButton;
     private JButton difficultyButton;
     private JButton playAgainButton;
@@ -43,17 +46,21 @@ public class MenuScreen extends JPanel {
     }
 
     private void createStartOrEndScreen() {
-        if (gameState == GameBoard.GameState.GAME_INITIALIZED) {
+        if (gameState == GameState.GAME_INITIALIZED) {
             addStartButton();
             addDifficultyButton();
-        } else if (gameState == GameBoard.GameState.GAME_OVER) {
+        } else if (gameState == GameState.GAME_OVER) {
             addGameOverText();
+            addPlayAgainButton();
+        } else if (gameState == GameState.GAME_WON) {
+            addGameWonText();
             addPlayAgainButton();
         }
     }
 
     private void addTitle() {
         title = new JTextPane();
+        title.setEditable(false);
         title.setText("Minesweeper");
         title.setFont(new Font("Impact", Font.BOLD, 50));
         title.setBackground(Color.darkGray);
@@ -64,6 +71,7 @@ public class MenuScreen extends JPanel {
 
     private void addSubTitle() {
         subTitle = new JTextPane();
+        subTitle.setEditable(false);
         subTitle.setText("~ Viorel Tsigos ~");
         subTitle.setFont(new Font("Impact", Font.PLAIN, 20));
         subTitle.setBackground(Color.darkGray);
@@ -74,12 +82,24 @@ public class MenuScreen extends JPanel {
 
     private void addGameOverText() {
         gameOverText = new JTextPane();
+        gameOverText.setEditable(false);
         gameOverText.setText("GAME OVER");
         gameOverText.setFont(new Font("Impact", Font.BOLD, 45));
         gameOverText.setBackground(Color.darkGray);
         gameOverText.setForeground(Color.red);
         gameOverText.setBounds((gameWidth - 220) / 2, (int) (gameHeight * 0.40), 220, 50);
         add(gameOverText);
+    }
+
+    private void addGameWonText() {
+        gameWonText = new JTextPane();
+        gameWonText.setEditable(false);
+        gameWonText.setText("GAME WON");
+        gameWonText.setFont(new Font("Impact", Font.BOLD, 45));
+        gameWonText.setBackground(Color.darkGray);
+        gameWonText.setForeground(Color.green);
+        gameWonText.setBounds((gameWidth - 210) / 2, (int) (gameHeight * 0.40), 210, 50);
+        add(gameWonText);
     }
 
     private void addStartButton() {
@@ -115,7 +135,7 @@ public class MenuScreen extends JPanel {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.revalidate();
-            } else if (gameState == GameBoard.GameState.GAME_OVER) {
+            } else if (gameState == GameState.GAME_OVER || gameState == GameState.GAME_WON) {
                 try {
                     Runtime.getRuntime().exec("java -cp bin Minesweeper.Main");
                 } catch (IOException f) {
