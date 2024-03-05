@@ -84,7 +84,7 @@ public class Cell {
     }
 
     public void revealMine(long sleepTime) {
-        if (isMine) {
+        if (isMine()) {
             state = State.UNCOVERED;
             try {
                 Thread.sleep(sleepTime);
@@ -113,6 +113,9 @@ public class Cell {
     public void uncover() {
         if (state == State.COVERED) {
             state = State.UNCOVERED;
+            if (isMine()) {
+                gameBoard.setGameState(GameState.GAME_OVER);
+            }
             if (gameBoard.getGameState() == GameState.RUNNING && mineCount == 0) {
                 neighbors.stream().filter(Optional::isPresent).map(Optional::get).forEach(Cell::uncover);
             } else if (gameBoard.getGameState() == GameState.GAME_INITIALIZED) {
@@ -125,7 +128,7 @@ public class Cell {
                         .forEach(Cell::uncover);
             }
         } else if (state == State.UNCOVERED) {
-            if (mineCount == countNeighborFlags()) {
+            if (getMineCount() == countNeighborFlags()) {
                 neighbors.stream()
                         .filter(Optional::isPresent)
                         .map(Optional::get)

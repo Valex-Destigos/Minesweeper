@@ -71,9 +71,6 @@ public class GameBoard implements Runnable {
         int y = p.y / (GameGUI.GAME_HEIGHT / BOARD_SIZE);
         if (x >= 0 && x < BOARD_SIZE && y >= 0 && y < BOARD_SIZE) {
             board[x][y].uncover();
-            if (board[x][y].isMine()) {
-                gameState = GameState.GAME_OVER;
-            }
         }
     }
 
