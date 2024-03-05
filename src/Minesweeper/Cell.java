@@ -128,7 +128,7 @@ public class Cell {
                         .forEach(Cell::uncover);
             }
         } else if (state == State.UNCOVERED) {
-            if (getMineCount() == countNeighborFlags()) {
+            if (getMineCount() <= countNeighborFlags()) {
                 neighbors.stream()
                         .filter(Optional::isPresent)
                         .map(Optional::get)
