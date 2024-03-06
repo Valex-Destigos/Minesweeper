@@ -1,0 +1,77 @@
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\bin\Debug\net8.0\appsettings.json
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\bin\Debug\net8.0\Minesweeper.exe
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\bin\Debug\net8.0\Minesweeper.deps.json
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\bin\Debug\net8.0\Minesweeper.runtimeconfig.json
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\bin\Debug\net8.0\Minesweeper.dll
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\bin\Debug\net8.0\Minesweeper.pdb
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\Minesweeper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\Minesweeper.AssemblyInfoInputs.cache
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\Minesweeper.AssemblyInfo.cs
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\Minesweeper.csproj.CoreCompileInputs.cache
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\Minesweeper.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\staticwebassets\msbuild.Minesweeper.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\staticwebassets\msbuild.build.Minesweeper.props
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Minesweeper.props
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Minesweeper.props
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\scopedcss\bundle\Minesweeper.styles.css
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\Minesweeper.dll
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\refint\Minesweeper.dll
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\Minesweeper.pdb
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\Minesweeper.genruntimeconfig.cache
+C:\Users\viore\OneDrive\Dokumente\001_Privat\Minesweeper\Minesweeper\obj\Debug\net8.0\ref\Minesweeper.dll
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\bin\Debug\net8.0\appsettings.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\bin\Debug\net8.0\Minesweeper.exe
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\bin\Debug\net8.0\Minesweeper.deps.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\bin\Debug\net8.0\Minesweeper.runtimeconfig.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\bin\Debug\net8.0\Minesweeper.dll
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\bin\Debug\net8.0\Minesweeper.pdb
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\Minesweeper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\Minesweeper.AssemblyInfoInputs.cache
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\Minesweeper.AssemblyInfo.cs
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\Minesweeper.csproj.CoreCompileInputs.cache
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\Minesweeper.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\Minesweeper.sourcelink.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\staticwebassets\msbuild.Minesweeper.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\staticwebassets\msbuild.build.Minesweeper.props
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Minesweeper.props
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Minesweeper.props
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\scopedcss\bundle\Minesweeper.styles.css
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\Minesweeper.dll
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\refint\Minesweeper.dll
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\Minesweeper.pdb
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\Minesweeper.genruntimeconfig.cache
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper C#\obj\Debug\net8.0\ref\Minesweeper.dll
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\bin\Debug\net8.0\appsettings.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\bin\Debug\net8.0\Minesweeper.exe
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\bin\Debug\net8.0\Minesweeper.deps.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\bin\Debug\net8.0\Minesweeper.runtimeconfig.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\bin\Debug\net8.0\Minesweeper.dll
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\bin\Debug\net8.0\Minesweeper.pdb
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\Minesweeper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\Minesweeper.AssemblyInfoInputs.cache
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\Minesweeper.AssemblyInfo.cs
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\Minesweeper.csproj.CoreCompileInputs.cache
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\Minesweeper.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\Minesweeper.sourcelink.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\staticwebassets\msbuild.Minesweeper.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\staticwebassets\msbuild.build.Minesweeper.props
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Minesweeper.props
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Minesweeper.props
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\scopedcss\bundle\Minesweeper.styles.css
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\Minesweeper.dll
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\refint\Minesweeper.dll
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\Minesweeper.pdb
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\Minesweeper.genruntimeconfig.cache
+C:\Users\viore\OneDrive\Dokumente\GitHub\Minesweeper\Minesweeper_C#\obj\Debug\net8.0\ref\Minesweeper.dll
